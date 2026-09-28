@@ -1,0 +1,21 @@
+REF=../STAR_Index/
+OUT=../outdir/
+IN=../input/
+
+
+mkdir -p "$OUT"
+
+for file in "$IN"/*.fastq.gz
+do
+    base=$(basename "$file" .fastq.gz)
+
+    STAR \
+        --runThreadN "$SLURM_CPUS_PER_TASK" \
+        --twopassMode Basic \
+        --outSAMtype BAM SortedByCoordinate \
+        --genomeDir "$REF" \
+        --readFilesCommand zcat \
+        --readFilesIn "$file" \
+        --quantMode GeneCounts \
+        --outFileNamePrefix "${OUT}/${base}."
+done
