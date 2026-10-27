@@ -1,3 +1,16 @@
+#Generate Index
+module load star/2.7.10b-m3zkpic
+
+mkdir -p STAR_index
+
+STAR \
+  --runThreadN 4 \
+  --runMode genomeGenerate \
+  --genomeDir STAR_index \
+  --genomeFastaFiles GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fa  \
+  --sjdbGTFfile GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.gtf \
+  --sjdbOverhang 50
+
 REF=../STAR_Index/
 OUT=../outdir/
 IN=../input/
