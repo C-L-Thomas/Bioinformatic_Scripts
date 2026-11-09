@@ -3,7 +3,7 @@ set -euo pipefail
 module load cellranger
 
 work="$SLURM_SUBMIT_DIR"
-ref="/scratch/drosleep/clt54/Genome/GCF_000001215.4_Release_6_plus_ISO1_MT/Drosophila_v2"
+ref="Drosophila_v2"
 results="$work/cellranger_results"
 
 mkdir -p "$results"
