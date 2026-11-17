@@ -8,6 +8,6 @@ cd $SLURM_SUBMIT_DIR
 dorado-0.9.1-linux-x64/bin/dorado demux \
   --kit-name SQK-NBD114-24 \
   --no-trim \
-  --output-dir 4mc,5mc,6ma \
+  --output-dir 4mc,5mc,6ma \ # 5mcg,hmcg,6ma other option
   4mc,5mc,6ma.bam 
 
